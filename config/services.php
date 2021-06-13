@@ -54,4 +54,9 @@ return [
         'redirect' => 'http://127.0.0.1:8000/login/linkedin/callback',
     ],
 
+    'yahoo' => [
+        'client_id' => env('YAHOO_CLIENT_ID'),
+        'client_secret' => env('YAHOO_CLIENT_SECRET'),
+        'redirect' => 'https://toekang.test/login/yahoo/callback',
+    ],
 ];
