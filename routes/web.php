@@ -33,3 +33,6 @@ Route::get('/login/github/callback', [App\Http\Controllers\Auth\LoginController:
 
 Route::get('/login/linkedin', [App\Http\Controllers\Auth\LoginController::class, 'redirectToLinkedin'])->name('login.linkedin');
 Route::get('/login/github/linkedin', [App\Http\Controllers\Auth\LoginController::class, 'handleLinkedinCallback']);
+
+Route::get('/login/yahoo', [App\Http\Controllers\Auth\LoginController::class, 'redirectToYahoo'])->name('login.yahoo');
+Route::get('/login/yahoo/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleYahooCallback']);

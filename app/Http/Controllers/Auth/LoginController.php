@@ -105,6 +105,22 @@ class LoginController extends Controller
         return redirect()->route('home');
     }
 
+    // Yahoo
+    public function redirectToYahoo()
+    {
+        return Socialite::driver('yahoo')->redirect();
+    }
+
+    public function handleYahooCallback()
+    {
+        $user = Socialite::driver('yahoo')->user();
+
+        $this->_registerOrLoginUser($user);
+
+        // return home after login
+        return redirect()->route('home');
+    }
+
     protected function _registerOrLoginUser($data)
     {
         $user = User::where('email', '=', $data->email)->first();
